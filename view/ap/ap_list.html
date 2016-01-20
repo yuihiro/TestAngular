@@ -1,0 +1,94 @@
+<div class="container-fluid row">
+    <div class="row">
+        <div style="float:left">
+            <span class="glyphicon glyphicon-wrench"></span>
+        </div>
+        <div style="float:left">
+            <p>AP 목록</p>
+        </div>
+        <div style="float:right">
+            <button type="button" class="btn btn-sx btn-primary ">정보</button>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-xs-3">
+            <div class="panel panel-default">
+                <div class="panel-title">검색창</div>
+                <div class="panel-body">
+                    <div class="form-group form-inline">
+                        <label>타입</label>
+                        <select class="form-control" ng-init="search_type=1" ng-model="search_type" ng-options="opt for opt in ap_search_option.type_lst"></select>
+                    </div>
+                    <div class="form-group form-inline">
+                        <label>지도</label>
+                        <select class="form-control" ng-init="search_map='한국'" ng-model="search_map" ng-options="opt for opt in ap_search_option.map_lst"></select>
+                    </div>
+                    <button type="button" class="btn btn-sx btn-primary ">검색</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-9">
+            <div class="container-fluid" ng-grid="ap_grid_option" id="ap_grid" auto-height></div>
+            <pagination total-items="ap_grid_total_cnt" ng-model="ap_grid_option.current_page" max-size="10" class="pagination-sm" boundary-links="true" ng-change="changePage()"></pagination>
+            <pre>The selected page no: {{ap_grid_option.current_page}}</pre>
+        </div>
+    </div>
+</div>
+<script type="text/ng-template" id="viewTemplate2">
+    <span ng-bind-html="row.entity[col.field]"></span>
+</script>
+<!--
+<table st-table="ap_grid_data" class="table table-striped">
+	<thead>
+		<tr>
+			<th st-sort="ssid">ssid</th>
+			<th st-sort="nickname">nickname</th>
+			<th st-sort="location">map</th>
+			<th st-sort="sensor_name">sensor</th>
+			<th st-sort="rss">rss</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr st-select-row="row" st-select-mode="single"
+			ng-repeat="row in ap_grid_data">
+			<td >{{row.ssid}}</td>
+			<td >{{row.nickname}}</td>
+			<td >{{row.location}}</td>
+			<td >{{row.sensor_name}}</td>
+			<td >{{row.rss}}</td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<td colspan="5" class="text-center">
+				<div st-pagination="" st-items-by-page="20"></div>
+			</td>
+		</tr>
+	</tfoot>
+</table>
+<div>
+	<div ui-grid="grid_option" ui-grid-selection class="grid"></div>
+</div>
+	<table class="table">
+		<thead>
+			<tr>
+				<td>NAME</td>
+				<td>ID</td>
+				<td>Email</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="item in admin_data">
+				<td ng-click="viewAdmin($index)">item.name</td>
+				<td>item.id</td>
+				<td>item.email</td>	
+			</tr>
+		</tbody>
+	</table>
+	
+	<button ng-click="addAdmin()">add</button>
+	<button ng-click="delAdmin()">delete</button>
+	 
+</div>
+-->

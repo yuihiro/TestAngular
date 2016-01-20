@@ -1,0 +1,83 @@
+<div class="container-fluid">
+    <div style="float:left">
+        <span class="glyphicon glyphicon-search"></span>
+    </div>
+    <div style="float:left">
+        <p>계정 목록</p>
+    </div>
+</div>
+<hr>
+<div class="container-fluid" ng-grid="admin_grid_option"></div>
+</div>
+<span class="btn-group">
+<button type="button" class="btn btn-primary" ng-click="modifyItem()">수정</button>
+<button type="button" class="btn btn-primary" ng-click="deleteItem()">삭제</button>
+<button type="button" class="btn btn-primary" ng-click="openAdminAdd()">추가</button>
+</span>
+<form name="login_form">
+    <select ng-model="depCountry" ng-options="item.name for item in combo_data" ng-change="makeChanged(item)" id="woo">
+        <option value="">No select</option>
+    </select>
+</form>
+<div ng-show="login_form.$invalid">출발 국가와 도착 국가는 필히 선택해주세요.</div>
+<div class="panel panel-default">
+    <textarea class="form-control" rows="3"></textarea>
+</div>
+<div class="checkbox">
+    <label>
+        <input type="checkbox" value=""> Option one is this and that&mdash;be sure to include why it's great
+    </label>
+</div>
+<div class="checkbox disabled">
+    <label>
+        <input type="checkbox" value="" disabled> Option two is disabled
+    </label>
+</div>
+<div class="radio">
+    <label>
+        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Option one is this and that&mdash;be sure to include why it's great
+    </label>
+</div>
+<div class="radio">
+    <label>
+        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> Option two can be something else and selecting it will deselect option one
+    </label>
+</div>
+<div class="radio disabled">
+    <label>
+        <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled> Option three is disabled
+    </label>
+</div>
+<label class="checkbox-inline">
+    <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
+</label>
+<label class="checkbox-inline">
+    <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
+</label>
+<label class="checkbox-inline">
+    <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
+</label>
+<label class="radio-inline">
+    <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 1
+</label>
+<label class="radio-inline">
+    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 2
+</label>
+<label class="radio-inline">
+    <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 3
+</label>
+<div class="form-group has-success has-feedback">
+    <label class="control-label" for="inputSuccess2">Input with success</label>
+    <input type="text" class="form-control" id="inputSuccess2" aria-describedby="inputSuccess2Status">
+    <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+    <span id="inputSuccess2Status" class="sr-only">(success)</span>
+</div>
+<div class="form-group has-success has-feedback">
+    <label class="control-label" for="inputGroupSuccess1">Input group with success</label>
+    <div class="input-group">
+        <span class="input-group-addon">@</span>
+        <input type="text" class="form-control" id="inputGroupSuccess1" aria-describedby="inputGroupSuccess1Status">
+    </div>
+    <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+    <span id="inputGroupSuccess1Status" class="sr-only">(success)</span>
+</div>
